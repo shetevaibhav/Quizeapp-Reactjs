@@ -1,0 +1,28 @@
+.question-box {
+    padding: 1rem;
+    background-color: rgba(161, 188, 205, 0.902);
+    margin: 2rem auto;
+    width: 60rem;
+    max-width: 100%;
+    border-radius: 2rem;
+    }
+
+.number-question{
+    text-align: left;
+   display: flex;
+}
+.time-question{
+    text-align: right;
+}
+.time{
+   margin-left: 50%;
+}
+
+.sub-btn{
+   margin-left: 80%;
+   background-color: #00445d;
+   color: white;
+   width: 90px;
+   height: 50px;
+   border-radius: 50px;
+}
