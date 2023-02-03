@@ -1,6 +1,9 @@
 import './App.css';
 import Question from './component/Question';
 
+
+
+
 function App() {
   const question=[
     { quesno:"Q1",
@@ -31,11 +34,13 @@ function App() {
       option3:"design language",
       option4:"frontendframework"
     },
+    
 
   ]
   return (
     <div className="App">
      <Question question={question}/>
+     
     </div>
   );
 }
