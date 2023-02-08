@@ -5,7 +5,7 @@ import{useState} from 'react';
 
 function Question(props) {
   const questions = props.question;
-  const len = Object.keys(questions).length;
+ // const len = Object.keys(questions).length;
 
   const [filtercategory,setfiltercategory]=useState("all");
 
@@ -19,7 +19,9 @@ function Question(props) {
    });
 
    let length1=filterquestion.length;
-   
+
+   filtercategory==="all"? length1=Object.keys(questions).length:length1=filterquestion.length
+
    let questioncontent=<p>No Quiz Available!!</p>
    
    if(filterquestion.length>0)
@@ -41,7 +43,7 @@ function Question(props) {
   return (
     <div className="question-box">
       <div className="number-question">
-        <h2>Number of Question {len}</h2>
+        <h2>Number of Question {length1}</h2>
         <h2 className="time">Time:10 Min</h2>
       </div>
      <Questionfilter question={questions} selected={filtercategory} onChangefilter={filterchangehandler}/>
