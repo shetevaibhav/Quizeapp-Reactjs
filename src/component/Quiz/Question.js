@@ -25,25 +25,11 @@ function Question(props) {
    if(filterquestion.length>0)
    {
     questioncontent=filterquestion.map((ques,index)=>{
-        return <Quize key={ques.id} question={ques} len={length1} index={index} />
+        return <div><Quize key={ques.id} question={ques} len={length1} index={index}/><hr/></div> 
     });
    }
 
-  // const [choicecategory, setchoicecategory] = useState("");
-  // const filterchoice = (c) => {
-  //   setchoicecategory(c);
-  // };
-  // const filterques = questions.filter((question) => {
-  //   return question.category === choicecategory;
-  // });
-  // let length1 = filterques.length;
-  // let questioncontent = <p>There is No Quiz in {choicecategory} </sp>;
-  // if (filterques.length > 0) {
-  //   questioncontent = filterques.map((question, index) => {
-  //     return (
-  //       <Quize key={question.id} question={question} len={length1} index={index} />
-  //     );
-  //   });
+  
   
   return (
     <div className="question-box">
@@ -52,20 +38,8 @@ function Question(props) {
         <h2 className="time">Time:10 Min</h2>
       </div>
      <Questionfilter question={questions} selected={filtercategory} onChangefilter={filterchangehandler}/>
-
-      {/* <Questionfilter
-        selectedcategory={choicecategory}
-        onChangeFilter={filterchoice}
-      /> */}
-     {questioncontent} 
     
-
-      {/* {questions.map((item, index) => {
-        return (
-          <Quize key={index + 1} question={item} len={len} index={index} />
-        );
-      })} */}
-      <hr/>
+     {questioncontent}  
     </div>
   );
     }

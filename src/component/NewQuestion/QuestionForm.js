@@ -104,7 +104,7 @@ function QuestionForm(props) {
           enteredanswer:"",
         });
   };
-  
+
   return (
       <form onSubmit={submitquestionhandler}>
       <div className="new-expense__controls">
@@ -133,7 +133,7 @@ function QuestionForm(props) {
           <input type="text" onChange={option4changehandler} value={userInput.enteredoption4} />
         </div>
         <div className="new-expense__control">
-          <label>Currect Answer</label>
+          <label>Correct Answer</label>
           {/* <input type="text"  onChange={currectanswerchangehandler} value={userInput.enteredanswer}/> */}
         <select className="dropdown" onChange={currectanswerchangehandler} value={userInput.enteredanswer}>
         <option value="">Select</option>

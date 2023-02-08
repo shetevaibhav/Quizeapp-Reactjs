@@ -16,8 +16,10 @@ function Quize(props) {
         <div className='question__option'>{option3}</div>
         <div className='question__option'>{option4}</div>
         <div className='status-Quesno'>{props.index+1} out of {props.len}</div>
+        
     </div>
   )
+  
 }
 
 export default Quize
