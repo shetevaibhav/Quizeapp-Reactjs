@@ -118,8 +118,10 @@ function QuestionForm(props) {
         <label className="label">Categories</label>
         <select onChange={categorieschangehandler} value={userInput.enteredcategories} className="dropdown">
         <option>Select</option>
-        <option value="technical">Technical</option>
+        <option value="technical">Mathematic</option>
         <option value="general">General</option>
+        <option value="general">Science</option>
+        <option value="general">Technology</option>
         </select>
         </div>
         <div className="new-expense__control">

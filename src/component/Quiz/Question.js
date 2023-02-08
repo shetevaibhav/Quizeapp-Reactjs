@@ -7,7 +7,7 @@ function Question(props) {
   const questions = props.question;
   const len = Object.keys(questions).length;
 
-  const [filtercategory,setfiltercategory]=useState("technical");
+  const [filtercategory,setfiltercategory]=useState("all");
 
   const filterchangehandler=(selectedcategory)=>{
 
@@ -29,6 +29,13 @@ function Question(props) {
     });
    }
 
+
+   if(filtercategory==="all")
+   {
+    questioncontent=questions.map((ques,index)=>{
+        return <div><Quize key={ques.id} question={ques} len={length1} index={index}/><hr/></div> 
+    });
+   }
   
   
   return (
