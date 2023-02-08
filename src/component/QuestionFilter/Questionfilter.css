@@ -1,0 +1,14 @@
+.time{
+  margin-left: 50%;
+}
+.dropop{
+   margin-left: 20%;
+   width: 100%;
+   height: 35px;
+   font-size: 30px;
+   margin-top: 20px;
+}
+.number-question{
+  text-align: left;
+ display: flex;
+}
