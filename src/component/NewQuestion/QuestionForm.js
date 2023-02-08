@@ -104,7 +104,7 @@ function QuestionForm(props) {
           enteredanswer:"",
         });
   };
-
+  
   return (
       <form onSubmit={submitquestionhandler}>
       <div className="new-expense__controls">
