@@ -40,6 +40,9 @@ function Question(props) {
      <Questionfilter question={questions} selected={filtercategory} onChangefilter={filterchangehandler}/>
     
      {questioncontent}  
+      
+    <button  className="sub-btn" type="submit">Submit</button>
+       
     </div>
   );
     }

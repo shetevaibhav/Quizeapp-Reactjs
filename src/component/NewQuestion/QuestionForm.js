@@ -145,6 +145,7 @@ function QuestionForm(props) {
         </div>
         <div className="new-expense__actions">
           <button type="submit">Add Question</button>
+          <button onClick={props.onCancel}>Cancel</button>
         </div>
       </div>
     </form>
