@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import QuestionForm from "./QuestionForm";
-import './NewQuestion.css';
+import classes from './NewQuestion.module.css';
 
 function NewQuestion(props) {
 
@@ -9,9 +9,10 @@ function NewQuestion(props) {
   {
       const questiondata ={
          ...enteredquestiondata,
-        // id: Math.random().toString(),
+         id: Math.random().toString(),
       };
       props.addquestion(questiondata);
+      setisEditing(true);
   };
   const startEditing=()=>
   {
@@ -30,7 +31,8 @@ function NewQuestion(props) {
   //         return <QuestionForm onquestionsave={savequestionhandler} onCancel={stopEditing}/>;
   //       }
   return (
-     <div className="new-expense">
+     <React.Fragment>
+      <div className={classes.newquestion}>
 
      {/* {!isEditing &&(
           <button onClick={startEditing}>Add New Question</button>
@@ -41,10 +43,10 @@ function NewQuestion(props) {
       )
       } */}
      {
-       !isEditing?<button onClick={startEditing}>Add New Question</button>:<QuestionForm onquestionsave={savequestionhandler} onCancel={stopEditing}/>
+       isEditing?<QuestionForm onquestionsave={savequestionhandler} onCancel={stopEditing}/>:<button onClick={startEditing}>Add New Question</button>
      }
-    
-  </div>
+    </div>
+  </React.Fragment>
   )
 }
 

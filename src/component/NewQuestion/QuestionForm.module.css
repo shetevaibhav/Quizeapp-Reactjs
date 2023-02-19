@@ -1,4 +1,4 @@
-.newquestioncontrols {
+.newquestioncontrol {
     /* display: flex;
     flex-wrap: wrap; */
     gap: 1rem;
@@ -26,14 +26,15 @@
   }
 .dropdown{
   margin-top:10px;
-  width:50%;
-  height:28px;
+  width:80%;
+  height:80px;
   font-size:20px;
   display: flex;
 }
-.label
+.labels
 {
   margin-top: 10px;
   font-size: 15px;
   font-weight: bold;
+  text-align: left;
 }

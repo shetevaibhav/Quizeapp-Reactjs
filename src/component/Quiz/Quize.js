@@ -1,4 +1,5 @@
 import './Quize.css';
+import classes from './Quize.module.css';
 function Quize(props) {
     //const len=Object.keys(props.question).length
     //const questionno=props.question.quesno;
@@ -9,13 +10,13 @@ function Quize(props) {
     const option3=props.question.option3;
     const option4=props.question.option4;
   return (
-    <div className='Quize-item'>
-        <div className='Qustion-item'><h1>Q{props.index+1} {ques}</h1></div>
-        <div className='question__option'>{option1}</div>
-        <div className='question__option'>{option2}</div>
-        <div className='question__option'>{option3}</div>
-        <div className='question__option'>{option4}</div>
-        <div className='status-Quesno'>{props.index+1} out of {props.len}</div>
+    <div className={classes.Quizeitem}>
+        <div className={classes.Qustionitem}><h1>Q{props.index+1} {ques}</h1></div>
+        <div className={classes.questionoption}>{option1}</div>
+        <div className={classes.questionoption}>{option2}</div>
+        <div className={classes.questionoption}>{option3}</div>
+        <div className={classes.questionoption}>{option4}</div>
+        <div className={classes.statusQuesno}>{props.index+1} out of {props.len}</div>
         
     </div>
   )

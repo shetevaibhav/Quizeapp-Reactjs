@@ -1,4 +1,4 @@
-.new-question {
+.newquestion {
     background-color: rgba(120, 170, 201, 0.902);
     padding: 1rem;
     margin: 2rem auto;
@@ -11,7 +11,7 @@
    
   }
   
-  .new-question button {
+  .newquestion button {
     font: inherit;
     cursor: pointer;
     padding: 1rem 2rem;
@@ -24,19 +24,19 @@
     
   }
   
-  .new-question button:hover,
-  .new-question button:active {
+  .newquestion button:hover,
+  .newquestion button:active {
     background-color: #4da2cc;
     border-color: #510674;
   }
   
-  .new-question button.alternative {
+  .newquestion button.alternative {
     color: #220131;
     border-color: transparent;
     background-color: transparent;
   }
   
-  .new-question button.alternative:hover,
-  .new-question button.alternative:active {
+  .newquestion button.alternative:hover,
+  .newquestion button.alternative:active {
     background-color: #ddb3f8;
   }

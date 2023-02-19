@@ -1,5 +1,6 @@
 import Questionfilter from "../QuestionFilter/Questionfilter";
 import "./Question.css";
+import classes from './Question.module.css';
 import Quize from "./Quize";
 import{useState} from 'react';
 
@@ -41,16 +42,16 @@ function Question(props) {
   
   
   return (
-    <div className="question-box">
-      <div className="number-question">
+    <div className={classes.questionbox}>
+      <div className={classes.numberquestion}>
         <h2>Number of Question {length1}</h2>
-        <h2 className="time">Time:10 Min</h2>
+        <h2 className={classes.time}>Time:10 Min</h2>
       </div>
-     <Questionfilter question={questions} selected={filtercategory} onChangefilter={filterchangehandler}/>
+     <Questionfilter key={questions.id} question={questions} selected={filtercategory} onChangefilter={filterchangehandler}/>
     
      {questioncontent}  
       
-    <button  className="sub-btn" type="submit">Submit</button>
+    <button  className={classes.subbtn} type="submit">Submit</button>
        
     </div>
   );

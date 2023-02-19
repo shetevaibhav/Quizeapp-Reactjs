@@ -1,156 +1,122 @@
 import React, { useState } from 'react'
+import ErrorModel from '../UI/ErrorModel';
+import Button from "../UI/Button";
+import { useRef } from 'react';
 import './QuestionForm.css';
 
 function QuestionForm(props) {
 
-  const[userInput,setuserInput]=useState({
-   
-    enteredquestion:"",
-    enteredcategories:"",
-    enteredoption1:"",
-    enteredoption2:"",
-    enteredoption3:"",
-    enteredoption4:"",
-    enteredanswer:"",
-  });
+  //useRef
+  
+  const enteredquestionRef=useRef();
+  const enteredcategoriesRef=useRef();
+  const enteredoption1Ref=useRef();
+  const enteredoption2Ref=useRef();
+  const enteredoption3Ref=useRef();
+  const enteredoption4Ref=useRef();
+  const enteredanswerRef=useRef();
 
-  const questionchangehandler=(event)=>
-  {
-    setuserInput({
-      ...userInput,
-      enteredquestion:event.target.value,
-     
-    });
-  // console.log(event.target.value);
-  };
-
-  const categorieschangehandler=(event)=>{
-      setuserInput({
-        ...userInput,
-        enteredcategories:event.target.value,
-      });
-     // console.log(event.target.value);
-  }
-
-  const option1changehandler=(event)=>
-  {
-    setuserInput({
-      ...userInput,
-      enteredoption1:event.target.value,
-    });
-   // console.log(event.target.value);
-  };
-
-  const option2changehandler=(event)=>
-  {
-    setuserInput({
-      ...userInput,
-      enteredoption2:event.target.value,
-    });
-    //console.log(event.target.value);
-  };
-
-  const option3changehandler=(event)=>
-  {
-    setuserInput({
-      ...userInput,
-      enteredoption3:event.target.value,
-    });
-  //  console.log(event.target.value);
-  };
-
-  const option4changehandler=(event)=>
-  {
-    setuserInput({
-      ...userInput,
-      enteredoption4:event.target.value,
-    });
-   // console.log(event.target.value);
-  };
-
-  const currectanswerchangehandler=(event)=>
-  {
-     setuserInput({
-      ...userInput,
-      enteredanswer:event.target.value,
-     });
-    // console.log(event.target.value);
-  };
+  const[error,setError]=useState();
 
   const submitquestionhandler=(event)=>
   {
-    event.preventDefault();
+      event.preventDefault();
+
+      const enteredquestion=enteredquestionRef.current.value;
+      const enteredcategories=enteredcategoriesRef.current.value;
+      const enteredoption1=enteredoption1Ref.current.value;
+      const enteredoption2=enteredoption2Ref.current.value;
+      const enteredoption3=enteredoption3Ref.current.value;
+      const enteredoption4=enteredoption4Ref.current.value;
+      const enteredanswer=enteredanswerRef.current.value;
+      
+
+      if(enteredquestion.trim().length===0 ||
+       enteredcategories.trim().length===0 ||
+       enteredoption1.trim().length===0||enteredoption2.trim().length===0||
+       enteredoption3.trim().length===0||enteredoption4.trim().length===0||
+       enteredanswer.trim().length===0)
+      {
+        setError({title:"form is incomplete" ,message:"Please Input all details in text box!!"});
+        return;
+      }
+
       const newquestion=
         {
           //quesno:Math.floor(Math.random() * 10).toString(),
-          question:userInput.enteredquestion,
-          category:userInput.enteredcategories,
-          option1:userInput.enteredoption1,
-          option2:userInput.enteredoption2,
-          option3:userInput.enteredoption3,
-          option4:userInput.enteredoption4,
-          correctAnswer:userInput.enteredanswer,
+          question:enteredquestion,
+          category:enteredcategories,
+          option1:enteredoption1,
+          option2:enteredoption2,
+          option3:enteredoption3,
+          option4:enteredoption4,
+          correctAnswer:enteredanswer,
         };
-        console.log(newquestion);
+       // console.log(newquestion);
         props.onquestionsave(newquestion);
 
-        setuserInput({
-          enteredquestion:"",
-          enteredcategories:"",
-          enteredoption1:"",
-          enteredoption2:"",
-          enteredoption3:"",
-          enteredoption4:"",
-          enteredanswer:"",
-        });
+       enteredquestionRef.current.value="";
+       enteredcategoriesRef.current.value="";
+       enteredoption1Ref.current.value="";
+       enteredoption2Ref.current.value="";
+       enteredoption3Ref.current.value="";
+       enteredoption4Ref.current.value="";
+       enteredanswerRef.current.value="";
+        
   };
+  const errorHandler=()=>
+  {
+      setError(null);
+  }
 
   return (
+    <React.Fragment>
+      {error && <ErrorModel onConfirm={errorHandler} title={error.title} message={error.message}/> }
       <form onSubmit={submitquestionhandler}>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
+      <div className="newquestioncontrols">
+        <div className="newquestioncontrol label">
           <label>Add Your Question</label>
-          <textarea rows="5" cols="60" onChange={questionchangehandler} value={userInput.enteredquestion}>
-            write your question for here
+          <textarea rows="5" cols="60" ref={enteredquestionRef}>
             </textarea>
         </div>
         <div className="">
         <label className="label">Categories</label>
-        <select onChange={categorieschangehandler} value={userInput.enteredcategories} className="dropdown">
+        <select ref={enteredcategoriesRef} className="dropdown">
         <option>Select</option>
-        <option value="technical">Mathematic</option>
+        <option value="math">Mathematic</option>
         <option value="general">General</option>
-        <option value="general">Science</option>
-        <option value="general">Technology</option>
+        <option value="science">Science</option>
+        <option value="technical">Technology</option>
         </select>
         </div>
-        <div className="new-expense__control">
+        <div className="newquestioncontrol input">
           <label>Option 1</label>
-          <input type="text" onChange={option1changehandler} value={userInput.enteredoption1}/>
+          <input type="text" ref={enteredoption1Ref}/>
           <label>Option 2</label>
-          <input type="text" onChange={option2changehandler} value={userInput.enteredoption2} />
+          <input type="text" ref={enteredoption2Ref} />
           <label>Option 3</label>
-          <input type="text" onChange={option3changehandler} value={userInput.enteredoption3} />
+          <input type="text" ref={enteredoption3Ref}/>
           <label>Option 4</label>
-          <input type="text" onChange={option4changehandler} value={userInput.enteredoption4} />
+          <input type="text" ref={enteredoption4Ref} />
         </div>
-        <div className="new-expense__control">
-          <label>Correct Answer</label>
-          {/* <input type="text"  onChange={currectanswerchangehandler} value={userInput.enteredanswer}/> */}
-        <select className="dropdown" onChange={currectanswerchangehandler} value={userInput.enteredanswer}>
+        <div className="label">
+        <label className="label">Correct Answer</label>
+        <select className="dropdown" ref={enteredanswerRef}>
         <option value="">Select</option>
-        <option value={userInput.enteredoption1}>Option A</option>
-        <option value={userInput.enteredoption2}>Option B</option>
-        <option value={userInput.enteredoption3}>Option C</option>
-        <option value={userInput.enteredoption4}>Option D</option>
+        <option value={enteredoption1Ref}>Option A</option>
+        <option value={enteredoption2Ref}>Option B</option>
+        <option value={enteredoption3Ref}>Option C</option>
+        <option value={enteredoption4Ref}>Option D</option>
         </select>
         </div>
-        <div className="new-expense__actions">
-          <button type="submit">Add Question</button>
-          <button onClick={props.onCancel}>Cancel</button>
+        <div className="newquestionactions">
+          <Button type="submit">Add User</Button>
+          <Button onClick={props.onCancel}>Cancel</Button>
+          {/* <button onClick={props.onCancel}>Cancel</button> */}
         </div>
       </div>
     </form>
+    </React.Fragment>
   )
 }
 
