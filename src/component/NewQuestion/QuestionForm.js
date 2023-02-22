@@ -73,6 +73,7 @@ function QuestionForm(props) {
     <React.Fragment>
       {error && <ErrorModel onConfirm={errorHandler} title={error.title} message={error.message}/> }
       <form onSubmit={submitquestionhandler}>
+        <h3>Hello, Welcome {props.adminName}</h3>
       <div className="newquestioncontrols">
         <div className="newquestioncontrol label">
           <label>Add Your Question</label>
@@ -112,7 +113,7 @@ function QuestionForm(props) {
         <div className="newquestionactions">
           <Button type="submit">Add User</Button>
           <Button onClick={props.onCancel}>Cancel</Button>
-          {/* <button onClick={props.onCancel}>Cancel</button> */}
+          <Button onClick={props.onLogout}>LOGOUT</Button>
         </div>
       </div>
     </form>

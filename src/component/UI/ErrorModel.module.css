@@ -29,12 +29,14 @@
   
   .content {
     padding: 1rem;
+    background:white;
   }
   
   .actions {
     padding: 1rem;
     display: flex;
     justify-content: flex-end;
+    background:white;
   
 
   }

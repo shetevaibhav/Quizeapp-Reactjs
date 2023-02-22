@@ -1,11 +1,12 @@
 .button {
     font: inherit;
     border: 1px solid #59a2b8;
-    background: #5a9ec9;
+    background: #9bcbe8;
     color: white;
     padding: 0.25rem 1rem;
     cursor: pointer;
     border-radius: 10px;
+    
   }
   
   .button:hover,
@@ -17,4 +18,13 @@
     outline: none;
   }
   
-
+  
+  button:disabled,
+  button:focus:disabled,
+  button:hover:disabled,
+  button:active:disabled {
+    background: #ccc;
+    border-color: #ccc;
+    color: #666666;
+    cursor: not-allowed;
+  }

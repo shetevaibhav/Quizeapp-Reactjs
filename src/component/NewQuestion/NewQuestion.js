@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import QuestionForm from "./QuestionForm";
 import classes from './NewQuestion.module.css';
 
+
+
 function NewQuestion(props) {
 
   const[isEditing,setisEditing]=useState(false);
@@ -43,7 +45,8 @@ function NewQuestion(props) {
       )
       } */}
      {
-       isEditing?<QuestionForm onquestionsave={savequestionhandler} onCancel={stopEditing}/>:<button onClick={startEditing}>Add New Question</button>
+       isEditing?<QuestionForm onquestionsave={savequestionhandler} adminName={props.admintitle} onLogout={props.onLogout} onCancel={stopEditing}/>:<button onClick={startEditing}>Add New Question</button>
+       
      }
     </div>
   </React.Fragment>
