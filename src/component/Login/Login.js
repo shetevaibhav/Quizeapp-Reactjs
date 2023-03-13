@@ -11,6 +11,7 @@ const Login = (props) => {
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
+ 
 
   useEffect(()=>{
   setFormIsValid(
@@ -40,17 +41,26 @@ const Login = (props) => {
   };
   const submitHandler = (event) => {
     event.preventDefault();
+    
     props.onLogin(enteredEmail, enteredPassword);
     props.onUserLogin(enteredEmail, enteredPassword);
+
+    setEnteredEmail("");
+    setEnteredPassword("");
   };
 
+  
 
   return (
 
-   <Card className={classes.login}>
+  //  <Card className={classes.login}>
+    <Card className={`${classes.login} ${
+     emailIsValid === false ? classes.invalid :''}
+    ${ props.signups ===true ? classes.dislogin:''
+    }`}>
+    <button type="submit" onClick={props.signup} className={classes.btnsignup}>SIGN UP</button>
     <form onSubmit={submitHandler}>
     <div
-         
           className={`${classes.control} ${
             emailIsValid === false ? classes.invalid : ''
           }`}>
@@ -78,6 +88,7 @@ const Login = (props) => {
             onBlur={validatePasswordHandler}
           />
         </div>
+        
         <div className={classes.actions}>
           <Button type="submit"  disabled={!formIsValid}>
             LOGIN

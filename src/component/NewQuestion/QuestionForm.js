@@ -4,6 +4,7 @@ import Button from "../UI/Button";
 import { useRef } from 'react';
 import './QuestionForm.css';
 
+
 function QuestionForm(props) {
 
   //useRef
@@ -73,7 +74,6 @@ function QuestionForm(props) {
     <React.Fragment>
       {error && <ErrorModel onConfirm={errorHandler} title={error.title} message={error.message}/> }
       <form onSubmit={submitquestionhandler}>
-        <h3>Hello, Welcome {props.adminName}</h3>
       <div className="newquestioncontrols">
         <div className="newquestioncontrol label">
           <label>Add Your Question</label>
@@ -117,6 +117,7 @@ function QuestionForm(props) {
         </div>
       </div>
     </form>
+   
     </React.Fragment>
   )
 }

@@ -39,3 +39,10 @@
     transform: rotate(360deg);
   }
 }
+
+.headname
+{
+  color:rgba(120, 170, 201, 0.902);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
