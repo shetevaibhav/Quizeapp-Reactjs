@@ -11,7 +11,7 @@ function NewQuestion(props) {
   {
       const questiondata ={
          ...enteredquestiondata,
-         id: Math.random().toString(),
+         //id: Math.floor(Math.random() * 10).toString()
       };
       props.addquestion(questiondata);
       setisEditing(true);
@@ -46,8 +46,8 @@ function NewQuestion(props) {
       } */}
      {
        isEditing?<QuestionForm onquestionsave={savequestionhandler} adminName={props.admintitle} onLogout={props.onLogout} onCancel={stopEditing}/>:<button onClick={startEditing}>Add New Question</button>
-       
      }
+   
     </div>
   </React.Fragment>
   )

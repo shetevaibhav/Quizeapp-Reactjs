@@ -1,0 +1,166 @@
+{
+  "question": [
+    {
+      "id": 1,
+      "question": "What isJavascript ?",
+      "option1": "Information Technology",
+      "option2": "Inform tech",
+      "option3": "Internal tech",
+      "option4": "All of the above",
+      "category": "general",
+      "correctAnswer": "Internal tech"
+    },
+    {
+      "id": 2,
+      "question": "What is PYTHON Programming ?",
+      "option1": "programming langauge",
+      "option2": "web develoment",
+      "option3": "application develoment",
+      "option4": "All of the above",
+      "category": "general",
+      "correctAnswer": "Internal tech"
+    },
+    {
+      "id": 3,
+      "question": "What is full form of IT ?",
+      "option1": "Information Technology",
+      "option2": "Inform tech",
+      "option3": "Internal tech",
+      "option4": "All of the above",
+      "category": "technical",
+      "correctAnswer": "Internal tech"
+    },
+    {
+      "question": "sss",
+      "category": "general",
+      "option1": "s",
+      "option2": "s",
+      "option3": "d",
+      "option4": "f",
+      "id": 4
+    },
+    {
+      "question": "ddd",
+      "category": "general",
+      "option1": "ss",
+      "option2": "dd",
+      "option3": "ss",
+      "option4": "dd",
+      "id": 5
+    },
+    {
+      "question": "ddd",
+      "category": "science",
+      "option1": "d",
+      "option2": "f",
+      "option3": "d",
+      "option4": "d",
+      "id": 6
+    },
+    {
+      "question": "ffff",
+      "category": "general",
+      "option1": "d",
+      "option2": "f",
+      "option3": "d",
+      "option4": "f",
+      "correctAnswer": "[object Object]",
+      "id": 7
+    },
+    {
+      "question": "dddd",
+      "category": "general",
+      "option1": "ss",
+      "option2": "dd",
+      "option3": "ss",
+      "option4": "ss",
+      "correctAnswer": "Option 3",
+      "id": 8
+    },
+    {
+      "question": "dd",
+      "category": "general",
+      "option1": "ss",
+      "option2": "dd",
+      "option3": "ss",
+      "option4": "dd",
+      "correctAnswer": "enteredoption3Ref",
+      "id": 9
+    },
+    {
+      "question": "ss",
+      "category": "science",
+      "option1": "s",
+      "option2": "s",
+      "option3": "s",
+      "option4": "s",
+      "correctAnswer": "[object Object]",
+      "id": 10
+    },
+    {
+      "question": "ff",
+      "category": "general",
+      "option1": "d",
+      "option2": "f",
+      "option3": "d",
+      "option4": "f",
+      "id": 11
+    },
+    {
+      "question": "ff",
+      "category": "science",
+      "option1": "d",
+      "option2": "d",
+      "option3": "d",
+      "option4": "d",
+      "id": 12
+    },
+    {
+      "question": "ddd",
+      "category": "general",
+      "option1": "dd",
+      "option2": "ff",
+      "option3": "cc",
+      "option4": "dd",
+      "id": 13
+    },
+    {
+      "question": "ffff",
+      "category": "science",
+      "option1": "ff",
+      "option2": "dd",
+      "option3": "ss",
+      "option4": "ee",
+      "correctAnswer": "[object Object]",
+      "id": 14
+    },
+    {
+      "question": "ddd",
+      "category": "general",
+      "option1": "ssss",
+      "option2": "dd",
+      "option3": "ss",
+      "option4": "dd",
+      "id": 15
+    },
+    {
+      "question": "wwwwwwwwww",
+      "category": "science",
+      "option1": "ww",
+      "option2": "www",
+      "option3": "www",
+      "option4": "ww",
+      "id": 16
+    },
+    {
+      "question": "qqqq",
+      "category": "technical",
+      "option1": "q",
+      "option2": "q",
+      "option3": "w",
+      "option4": "q",
+      "correctAnswer": "[object Object]",
+      "id": 17
+    }
+  ]
+}

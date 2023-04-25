@@ -1,4 +1,4 @@
-import { useState } from 'react';
+//import { useState } from 'react';
 import './Quize.css';
 import classes from './Quize.module.css';
 

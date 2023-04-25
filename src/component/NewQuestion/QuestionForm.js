@@ -55,7 +55,7 @@ function QuestionForm(props) {
         };
        // console.log(newquestion);
         props.onquestionsave(newquestion);
-
+       
        enteredquestionRef.current.value="";
        enteredcategoriesRef.current.value="";
        enteredoption1Ref.current.value="";
@@ -83,7 +83,7 @@ function QuestionForm(props) {
         <div className="">
         <label className="label">Categories</label>
         <select ref={enteredcategoriesRef} className="dropdown">
-        <option>Select</option>
+        <option disabled>Select</option>
         <option value="math">Mathematic</option>
         <option value="general">General</option>
         <option value="science">Science</option>
@@ -103,11 +103,11 @@ function QuestionForm(props) {
         <div className="label">
         <label className="label">Correct Answer</label>
         <select className="dropdown" ref={enteredanswerRef}>
-        <option value="">Select</option>
-        <option value={enteredoption1Ref}>Option A</option>
-        <option value={enteredoption2Ref}>Option B</option>
-        <option value={enteredoption3Ref}>Option C</option>
-        <option value={enteredoption4Ref}>Option D</option>
+        <option disabled>Select</option>
+        <option value={enteredoption1Ref}>Option 1</option>
+        <option value={enteredoption2Ref}>Option 2</option>
+        <option value={enteredoption3Ref}>Option 3</option>
+        <option value={enteredoption4Ref}>Option 4</option>
         </select>
         </div>
         <div className="newquestionactions">
@@ -121,5 +121,4 @@ function QuestionForm(props) {
     </React.Fragment>
   )
 }
-
 export default QuestionForm

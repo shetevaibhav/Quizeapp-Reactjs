@@ -109,7 +109,7 @@ function QuestionForm(props) {
 
       const newquestion=
         {
-          //quesno:Math.floor(Math.random() * 10).toString(),
+          quesno:Math.floor(Math.random() * 10).toString(),
           question:userInput.enteredquestion,
           category:userInput.enteredcategories,
           option1:userInput.enteredoption1,

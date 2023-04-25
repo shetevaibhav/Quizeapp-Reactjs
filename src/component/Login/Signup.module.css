@@ -59,4 +59,19 @@
   
   }
 
+  .dislogin{
+    display: none;
+  }
+
+ .btnsignup
+  {
+    margin-left: 80%;
+    font: inherit;
+    border: 1px solid #59a2b8;
+    background: #3e6c80;
+    color: white;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+  }
   

@@ -4,6 +4,12 @@ import Button from '../UI/Button';
 import classes from './Login.module.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import {getAuth,createUserWithEmailAndPassword} from 'firebase/auth';
+import {app} from './firebase'
+
+
+
+const auth=getAuth(app);
 const Login = (props) => {
 
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -39,11 +45,18 @@ const Login = (props) => {
   const validatePasswordHandler = () => {
     setPasswordIsValid(enteredPassword.trim().length > 2);
   };
+
+  const signUpUser=()=>{
+    createUserWithEmailAndPassword(
+      auth,
+      enteredEmail,
+      enteredPassword
+      ).then((value)=>alert("success"));
+  };
   const submitHandler = (event) => {
     event.preventDefault();
     
-    props.onLogin(enteredEmail, enteredPassword);
-    props.onUserLogin(enteredEmail, enteredPassword);
+  
 
     setEnteredEmail("");
     setEnteredPassword("");
@@ -54,11 +67,12 @@ const Login = (props) => {
   return (
 
   //  <Card className={classes.login}>
-  <Card className={`${classes.login} ${
-    emailIsValid === false ? classes.invalid :''}
-   ${ props.signups ===true ? classes.dislogin:''
-   }`}>
-    <button type="submit" onClick={props.signup} className={classes.btnsignup}>SIGN UP</button>
+    <Card className={`${classes.login} ${
+     emailIsValid === false ? classes.invalid :''}
+    ${ props.signups ===true ? classes.dislogin:''
+    }`}>
+    {/* <button type="submit" onClick={props.signup} className={classes.btnsignup}>SIGN UP</button> */}
+    <h1>SIGN UP HERE</h1>
     <form onSubmit={submitHandler}>
     <div
           className={`${classes.control} ${
@@ -90,9 +104,12 @@ const Login = (props) => {
         </div>
         
         <div className={classes.actions}>
-          <Button type="submit"  disabled={!formIsValid}>
-            LOGIN
+          <Button type="submit" onClick={signUpUser} disabled={!formIsValid}>
+          Register
           </Button>
+         <Button type="submit" onClick={props.signout}>
+           Back To Login
+         </Button>
         </div>
       </form>
    </Card>
